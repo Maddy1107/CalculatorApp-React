@@ -8,8 +8,14 @@ export const Styles = StyleSheet.create({
       justifyContent:'flex-end'
     },
     resulttxt:{
+      fontSize:50,
+      margin: 15,
+      opacity:1,
+    },
+    resulttxt_notEqual:{
       fontSize:30,
       margin: 15,
+      opacity:0.4,
     },
     currentnum:{
       fontSize:60,
