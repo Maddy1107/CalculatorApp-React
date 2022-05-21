@@ -124,7 +124,7 @@ export default function Keyboard() {
 
     const handlePress = async (pressedButton) =>
     {
-
+        Vibration.vibrate(35);
 
         if(pressedButton.type === 'C')
         {

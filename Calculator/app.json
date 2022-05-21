@@ -28,6 +28,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "First app created while learning React Native",
+    "githubUrl": "https://github.com/Maddy1107/CalculatorApp-React"
   }
 }
