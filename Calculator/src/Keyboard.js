@@ -140,6 +140,14 @@ export default function Keyboard() {
         if(pressedButton.type === 'equal')
         {
             setIsEqual(true);
+            return;
+        }
+
+        if(pressedButton.type === 'DEL')
+        {
+            setexpression(expression.slice(0,-1));
+            await setCurrenttNum(currentNum.slice(0,-1));
+            return;
         }
 
         if(pressedButton.name !== '=')
@@ -167,9 +175,17 @@ export default function Keyboard() {
     {
         switch (operation) {
             case '+':
-                setResult('=' + (parseInt(lastnum) + parseInt(currentNum)))
+                setResult('=' + ((parseFloat(lastnum) + parseFloat(currentNum))* 100)/100)
                 break;
-        
+            case '-':
+                setResult('=' + ((parseFloat(lastnum) - parseFloat(currentNum))* 100)/100)
+                break;
+            case '/':
+                setResult('=' + ((parseFloat(lastnum) / parseFloat(currentNum))* 100)/100)
+                break;
+            case '*':
+                setResult('=' + ((parseFloat(lastnum) * parseFloat(currentNum))* 100)/100)
+                break;
             default:
                 break;
         }
