@@ -169,22 +169,27 @@ export default function Keyboard() {
             else
                 await setResult(result.toString() + pressedButton.name);
         }
+
+        console.log('L ' + lastnum)
+        console.log('C '+ currentNum)
+        console.log('O ' + operation)
+        console.log('R ' + result)
     }
 
-    const calculate = () =>
+    const calculate = async () =>
     {
         switch (operation) {
             case '+':
-                setResult('=' + ((parseFloat(lastnum) + parseFloat(currentNum))* 100)/100)
+                await setResult('=' + ((parseFloat(lastnum) + parseFloat(currentNum))* 100)/100)
                 break;
             case '-':
-                setResult('=' + ((parseFloat(lastnum) - parseFloat(currentNum))* 100)/100)
+                await setResult('=' + ((parseFloat(lastnum) - parseFloat(currentNum))* 100)/100)
                 break;
             case '/':
-                setResult('=' + ((parseFloat(lastnum) / parseFloat(currentNum))* 100)/100)
+                await setResult('=' + ((parseFloat(lastnum) / parseFloat(currentNum))* 100)/100)
                 break;
             case '*':
-                setResult('=' + ((parseFloat(lastnum) * parseFloat(currentNum))* 100)/100)
+                await setResult('=' + ((parseFloat(lastnum) * parseFloat(currentNum))* 100)/100)
                 break;
             default:
                 break;
